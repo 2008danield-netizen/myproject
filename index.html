@@ -1,4 +1,7 @@
 <canvas id="game" width="350" height="450"></canvas>
+<br>
+<button id="left">-</button>
+<button id="right">+</button>
 <script>
   const canvas = document.getElementById("game");
   const ctx = canvas.getContext("2d");
@@ -13,6 +16,8 @@
     if (e.key === "ArrowRight") playerX += 20;
     if (e.key === " " && gameOver) location.reload(); // NEW: space = restart
   });
+document.getElementById("left").onclick = ()=> playerX -= 20;
+document.getElementById("right").onclick = ()=>playerX += 20;
 
   function draw() {
     if (gameOver) {                          // NEW
